@@ -3,10 +3,10 @@
  
 return [
     'version' => '1.0.0',
-    'nombre' => 'web-site',
+    'nombre' => 'Club Deportivo Praxis',
     'charset' => 'utf-8',
-    'modoProduccion' => false,
-    
+    'modoProduccion' => true,
+    'tema' => 'corlate',
     'apacheRewrite' => true,
     'importar' => [
         '!aplicacion.modelos',
