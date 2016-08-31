@@ -3,7 +3,13 @@
 class CtrlPrincipal extends CControlador{
     
     public function accionInicio(){
-        $this->mostrarVista('inicio');
+        $c = new CCriterio();
+        $c->condicion('tipo_id', '1');
+        $publicaciones = Publicacion::modelo()->listar($c);
+        
+        $this->mostrarVista('inicio', [
+            'publicaciones' => $publicaciones,
+        ]);
     }
 
     public function accionAcerca(){

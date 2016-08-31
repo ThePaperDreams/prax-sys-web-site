@@ -8,6 +8,7 @@ Sis::Recursos()->recursoCss(['url' => Sis::apl()->tema->getUrlBase() . '/recurso
 Sis::Recursos()->recursoCss(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/css/main.css']);
 Sis::Recursos()->recursoCss(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/css/responsive.css']);
 Sis::Recursos()->recursoCss(['url' => Sis::UrlRecursos() . '/librerias/uikit/css/components/sticky.min.css']);
+Sis::Recursos()->recursoCss(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/css/estilos.css']);
 
 //Sis::Recursos()->recursoJs(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/js/jquery.js']);
 Sis::Recursos()->recursoJs(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/js/jquery.prettyPhoto.js']);
@@ -72,8 +73,8 @@ Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/c
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
-
-        <nav class="navbar navbar-inverse" role="banner" data-uk-sticky="">
+        
+<!--        <nav class="navbar navbar-inverse" role="banner" data-uk-sticky="">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -82,7 +83,7 @@ Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/c
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="<?= Sis::apl()->tema->getUrlBase() ?>/recursos/images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand logo" href="index.html"><img src="<?= Sis::apl()->tema->getUrlBase() ?>/recursos/pics/praxis-flag-v1.png" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -91,21 +92,48 @@ Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/c
                         <li><a href="<?= Sis::CrearUrl(['principal/elClub']) ?>">El club</a></li>
                         <li><a href="<?= Sis::CrearUrl(['Eventos/verEventos']) ?>">Eventos</a></li>
                         <li><a href="<?= Sis::CrearUrl(['Noticias/verNoticias']) ?>">Noticias</a></li>
-<!--                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
-                            </ul>
-                        </li>-->
                         <li><a href="<?= Sis::CrearUrl(['principal/entrar']) ?>">Entrar</a></li>
                     </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-		
+            </div>
+        </nav>-->
+<!--        <nav role="banner" class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="logo navbar-brand" href="http://localhost/proyecto-formacion/prax-sys-web-site/">
+                        <img alt="logo-praxis" src="http://localhost/proyecto-formacion/prax-sys-web-site/publico/temas/corlate/recursos/pics/praxis-flag-v1.png"></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="<?= Sis::CrearUrl(['principal/inicio']) ?>">Inicio</a></li>
+                        <li><a href="<?= Sis::CrearUrl(['principal/elClub']) ?>">El club</a></li>
+                        <li><a href="<?= Sis::CrearUrl(['Eventos/verEventos']) ?>">Eventos</a></li>
+                        <li><a href="<?= Sis::CrearUrl(['Noticias/verNoticias']) ?>">Noticias</a></li>
+                        <li><a href="<?= Sis::CrearUrl(['principal/entrar']) ?>">Entrar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+<!--
+-->
+	<?php $this->complemento('!siscoms.bootstrap3.CBNav', [
+            'contenedor' => 'container',
+            'tipo' => 'inverse',
+            'opcionesHtml' => ['role' => 'banner', 'data-uk-sticky' => ''],
+            'brand' => CHtml::img(Sis::apl()->tema->getUrlBase() . '/recursos/pics/praxis-flag-v1.png', ['alt' => 'logo-praxis']),
+            'opcionesBrand' => ['class' =>'logo'],
+            'menuDerecha' => [
+                ['texto' => 'Inicio', 'url' => ['principal/inicio']],
+                ['texto' => 'Eventos', 'url' => ['Eventos/verEventos']],
+                ['texto' => 'Noticias', 'url' => ['noticias/verNoticias']],
+                ['texto' => 'Entrar', 'url' => ['principal/entrar']],
+            ]
+        ]); ?>
     </header><!--/header-->
 
     <section id="main-slider" class="no-margin">

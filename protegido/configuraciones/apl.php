@@ -14,6 +14,7 @@ return [
     ],
     'modulos' => [
         /* Comenta el generador de código al entrar en modo producción
+        */
         'codegen' => [
             'ruta' => '!web.modulos.codegen',
             'clase' => 'codeGen',
@@ -21,15 +22,14 @@ return [
             'usuario' => 'admin',
             'clave' => 'admin',
         ],
-        */
     ],
     'componentes' => [
         'bd' => [
             'driver' => 'mysql',
             'servidor' => '127.0.0.1',
-            'usuario' => 'root',
-            'clave' => '',
-            'bd' => 'test',
+            'usuario' => 'pdeveloper',
+            'clave' => 'pr@x1sdev',
+            'bd' => 'prax_sys_dev',
             'prefijo' => 'tbl_',
             'charset' => 'utf8',
             'procedimientos' => false,
