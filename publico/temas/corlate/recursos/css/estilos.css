@@ -32,6 +32,7 @@ and open the template in the editor.
 }
 .navbar .container, .navbar .container .collapse, .nav.navbar-nav, .nav.navbar-nav li, .nav.navbar-nav li a{
     height: 100% !important;
+    
 }
 @media(max-width: 767px){
     .navbar .container .collapse{
@@ -75,6 +76,18 @@ and open the template in the editor.
     transition: transform 0.6s;
     opacity: 0.7;
 }
+
+#main-slider .prev, #main-slider .next {
+    position: absolute;
+    top: 23%;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 5;
+}
+
+
 .prev.hidden-xs:hover, .next.hidden-xs:hover{
     transform: scale(1.4);
     opacity: 1;
@@ -91,4 +104,25 @@ and open the template in the editor.
 }
 #feature, #recent-works, #services, #partner{
     /*padding-top: 80px;*/  
+}
+div.uk-sticky-placeholder{
+    position: absolute;
+    width: 100%;
+}
+#cont-tit-not{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0px;
+    background-color: #d9b948;
+    padding: 10px;
+}
+#cont-tit-not h2{
+    color: white;
+    margin: 0px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.56);
+}
+#recent-works{    
+    padding-top: 80px;
+    position: relative;
 }

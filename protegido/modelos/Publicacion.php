@@ -86,9 +86,9 @@
     
     public function getResumen(){
         $tot = strlen($this->contenido);
-        if(){
-            
-        }
+//        if(){
+//            
+//        }
     }
     
     /**

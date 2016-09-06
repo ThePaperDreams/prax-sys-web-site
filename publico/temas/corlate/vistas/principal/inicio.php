@@ -7,7 +7,7 @@
         </ol>
         <div class="carousel-inner">
 
-            <div class="item active" style="background-image: url(<?= Sis::UrlRecursos() ?>/galeria/bg-gallery-1.jpg)">
+            <div class="item active" style="background-image: url(<?= Sis::UrlRecursos() ?>/galeria/bg-gallery-3.jpg)">
                 <div class="container">
                     <div class="row slide-margin">
                         <div class="col-sm-7">
@@ -28,7 +28,7 @@
                 </div>
             </div><!--/.item-->
 
-            <div class="item" style="background-image: url(<?= Sis::UrlRecursos() ?>/galeria/bg-gallery-3.jpg)">
+            <div class="item" style="background-image: url(<?= Sis::UrlRecursos() ?>/galeria/bg-gallery-1.jpg)">
                 <div class="container">
                     <div class="row slide-margin">
                         <div class="col-sm-7">
@@ -81,34 +81,122 @@
 
 <section id="recent-works">
     <div class="container">
-        <div class="center wow fadeInDown">
+        <div id="cont-tit-not" class="center wow fadeInDown">
             <h2>Noticias</h2>          
         </div>
-
-<!--
-        <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-3">
-                <div class="recent-work-wrap">
-                    <img class="img-responsive" src="<?= Sis::apl()->tema->getUrlBase() ?>/recursos/images/portfolio/recent/item1.png" alt="">
-                    <div class="overlay">
-                        <div class="recent-work-inner">
-                            <h3><a href="#">Business theme</a> </h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class="preview" href="<?= Sis::apl()->tema->getUrlBase() ?>/recursos/images/portfolio/full/item1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                        </div> 
-                    </div>
-                </div>
-            </div>  
-        </div>
--->
-        <?php foreach($publicaciones AS $p):  ?>
-        <div class="row">
+<!--                                <div class="uk-width-medium-1-4 uk-row-first">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-init-inview uk-scrollspy-inview uk-invisible">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-invisible">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-invisible">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4 uk-grid-margin uk-row-first">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4 uk-grid-margin">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4 uk-grid-margin">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4 uk-grid-margin">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>-->
+        
+<!--        <div class="row">
             <div class="col-sm-12">
-                <h2><?= $p->titulo ?></h2>
-                <p><?= $p->resumen ?></p>
             </div>
-        </div>
+        </div>-->
+<div class="uk-grid" data-uk-grid-margin="" data-uk-scrollspy="{cls:'uk-animation-fade uk-invisible', target:'> div > .uk-panel', delay:300, repeat: true}">
+                                <div class="uk-width-medium-1-4 uk-row-first">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-init-inview uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4 uk-grid-margin uk-row-first">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4 uk-grid-margin">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4 uk-grid-margin">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                                <div class="uk-width-medium-1-4 uk-grid-margin">
+                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
+                                        <h3 class="uk-panel-title">Item</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                    </div>
+                                </div>
+                            </div>
+        <div class="uk-grid" data-uk-grid-margin="" data-uk-scrollspy="{cls:'uk-animation-fade', target:'> div > .uk-panel', delay:300, repeat: true}">
+        <?php foreach($publicaciones AS $p):  ?>
+            <div class="uk-width-medium-1-4">
+                <div class="uk-panel uk-panel-box">
+                    <h3 class="uk-panel-title">Item</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
         <?php endforeach; ?>
+        </div>            
     </div><!--/.container-->
 </section><!--/#recent-works-->
 
@@ -168,7 +256,7 @@
     <script>
         $(function(){
             var headerh = $("#header").height();
-            var wh = parseInt($(window).height()) - parseInt(headerh);
+            var wh = parseInt($(window).height());
             $("#main-slider .carousel .item").css("max-height", wh + "px");
         });
     </script>
