@@ -8,6 +8,8 @@ Sis::Recursos()->recursoCss(['url' => Sis::apl()->tema->getUrlBase() . '/recurso
 Sis::Recursos()->recursoCss(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/css/responsive.css']);
 Sis::Recursos()->recursoCss(['url' => Sis::UrlRecursos() . '/librerias/uikit/css/components/sticky.min.css']);
 Sis::Recursos()->recursoCss(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/css/estilos.css']);
+Sis::Recursos()->recursoCss(['url' => Sis::UrlRecursos() . '/librerias/lobibox/css/lobibox.css']);
+Sis::Recursos()->recursoCss(['url' => Sis::UrlRecursos() . '/librerias/lobibox/css/animate.css']);
 
 //Sis::Recursos()->recursoJs(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/js/jquery.js']);
 Sis::Recursos()->recursoJs(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/js/jquery.prettyPhoto.js']);
@@ -16,6 +18,8 @@ Sis::Recursos()->recursoJs(['url' => Sis::apl()->tema->getUrlBase() . '/recursos
 Sis::Recursos()->recursoJs(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/js/main.js']);
 Sis::Recursos()->recursoJs(['url' => Sis::apl()->tema->getUrlBase() . '/recursos/js/wow.min.js']);
 Sis::Recursos()->UIKit();
+Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/lobibox/js/lobibox.js']);
+Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/lobibox/js/notifications.js']);
 Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/core/scrollspy.min.js']);
 Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/components/sticky.min.js']);
 
@@ -110,6 +114,34 @@ Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/c
             </div>
         </div>
     </footer><!--/#footer-->
-    
+        <?php if(Sis::Sesion()->hayFlash("alerta")): ?>
+        <script>
+            <?php 
+            $flash = Sis::Sesion()->getFlash("alerta");
+            ?>
+            jQuery(function(){
+                Lobibox.notify('<?= isset($flash['tipo'])? $flash['tipo'] : 'default' ?>',{
+                    size: 'mini',
+                    showClass: '<?= isset($flash['animEntrada'])? $flash['animEntrada'] : 'bounceInRight' ?>',
+                    hideClass: '<?= isset($flash['animSalida'])? $flash['animSalida'] : 'bounceOutRight' ?>',
+                    msg:'<?= isset($flash['msg'])? $flash['msg'] : '' ?>',
+                    delay: 8000,
+                    soundPath: '<?= Sis::UrlRecursos() ?>librerias/lobibox/sounds/',
+                });
+            });           
+        </script>
+        <?php endif ?>
+        <script>
+            function lobiAlert(tipo, mensaje){
+                Lobibox.notify(tipo, {
+                    size: 'mini',
+                    showClass: 'bounceInRight',
+                    hideClass: 'bounceOutRight',
+                    msg:mensaje,
+                    delay: 8000,
+                    soundPath: '<?= Sis::UrlRecursos() ?>librerias/lobibox/sounds/',
+                });
+            }
+        </script>
 </body>
 </html>

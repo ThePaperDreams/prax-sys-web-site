@@ -3,6 +3,8 @@
 Sis::Recursos()->JQuery(); 
 Sis::Recursos()->Bootstrap3();
 Sis::Recursos()->AwesomeFont();
+Sis::Recursos()->Lolibox();
+Sis::Recursos()->Uikit();
 ?>
 <!DOCTYPE HTML>
 <html>
