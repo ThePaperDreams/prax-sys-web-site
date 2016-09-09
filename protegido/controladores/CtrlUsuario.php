@@ -38,6 +38,62 @@ class CtrlUsuario extends CControlador {
         ]);
     }
     
+    public function accionVerPerfil($pk) {
+        $modelo = $this->cargarModelo(Sis::apl()->usuario->getID());
+        $this->mostrarVista('perfil', ['modelo' => $modelo,
+        ]);
+    }
+    
+    public function accionEditarPerfil() {
+        $modelo = $this->cargarModelo(Sis::apl()->usuario->getID());
+        
+        if(isset($this->_p['ajx'])){
+            $modelo->atributos = $this->_p['ficha'];
+            $this->json([
+                'error' => !$modelo->guardar(),
+            ]);
+            Sis::fin();
+        } 
+        
+        $modelo->nombres = trim($this->_p['ficha']['nombres']);
+        $modelo->apellidos = trim($this->_p['ficha']['apellidos']);
+        $modelo->nombre_usuario = trim($this->_p['ficha']['nombre_usuario']);
+        $modelo->guardar();
+        $url = Sis::crearUrl(['Usuario/editarPerfil', Sis::apl()->usuario->getID]);
+        $this->mostrarVista('perfil', ['modelo' => $modelo,
+            'url' => $url,
+            'roles' => CHtml::modeloLista(Rol::modelo()->listar(), 'id_rol', 'nombre'),
+        ]);
+    }
+    
+    public function accionCambiarFoto(){
+        $imagen = CArchivoCargado::instanciarPorNombre('imagenes');
+        $rutaDes = Sis::resolverRuta(Sis::crearCarpeta("!publico.imagenes.usuarios"));
+        $rutaThumbs = Sis::resolverRuta(Sis::crearCarpeta("!publico.imagenes.usuarios.thumbs"));
+        $guardado = $imagen->guardar($rutaDes);
+        $error = true;
+        if($guardado){
+            $imagen->thumbnail($rutaThumbs, [
+                'tamanio' => 200,
+                'autocentrar' => true,
+                'tipo' => strtolower($imagen->getExtension()),
+            ]);
+            $mImagen = $this->cargarModelo(Sis::apl()->usuario->getID());
+            $mImagen->foto = $imagen->getNombreOriginal();
+            $mImagen->guardar();            
+            $error = false;
+        }
+        
+        header("Content-type: Application/json");
+        
+        echo json_encode([
+            'uploadErr' => $error,
+            'url' => Sis::UrlBase() . "/publico/imagenes/usuarios/$mImagen->foto",
+        ]);
+        Sis::fin();
+        
+    }
+    
     private function eliminarFoto($foto){
         if(is_null($foto) !== true && $foto !== ""){ // contiene foto
             $ruta = Sis::resolverRuta("!publico.imagenes.usuarios");
@@ -72,12 +128,10 @@ class CtrlUsuario extends CControlador {
         if(isset($this->_p['validarUsuarioEmail'])){
             if($id === null){
                 $criterio = [
-                    'where' => "nombre_usuario = '" . $this->_p['usuario'] . "' OR email = '" . $this->_p['email'] . "'",
-                ];
+                    'where' => "nombre_usuario = '" . $this->_p['usuario']];
             } else {
                 $criterio = [
-                    'where' => "(id_usuario <> $id) AND (nombre_usuario = '" . $this->_p['usuario'] . "' OR email = '" . $this->_p['email'] . "')",
-                ];
+                    'where' => "(id_usuario <> $id) AND (nombre_usuario = '" . $this->_p['usuario']];
             }
             $usuario = Usuario::modelo()->primer($criterio);
             if($usuario != null){
