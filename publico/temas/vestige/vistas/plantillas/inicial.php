@@ -34,9 +34,9 @@ $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
         <link rel="stylesheet" type="text/css" href="<?= $url ?>vendor/revslider/css/settings.css" media="screen" />
 
         <!-- GOOGLE FONTS FOR REVOLUTION SLIDER ONLY -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css' />
+<!--        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css' />
-        <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900' rel='stylesheet' type='text/css' />-->
         <!-- Color Style -->
         <link class="alt" href="<?= $url ?>colors/color1.css" rel="stylesheet" type="text/css">
         <link href="<?= $url ?>style-switcher/css/style-switcher.css" rel="stylesheet" type="text/css">
