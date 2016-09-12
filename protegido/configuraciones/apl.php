@@ -5,8 +5,9 @@ return [
     'version' => '1.0.0',
     'nombre' => 'Club Deportivo Praxis',
     'charset' => 'utf-8',
-    'modoProduccion' => true,
-    'tema' => 'corlate',
+    'modoProduccion' => false,
+//    'tema' => 'corlate',
+    'tema' => 'vestige',
     'apacheRewrite' => true,
     'importar' => [
         '!aplicacion.modelos',

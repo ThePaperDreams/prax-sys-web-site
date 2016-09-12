@@ -2,9 +2,15 @@
 
 class CtrlPrincipal extends CControlador{
     
+    public function inicializar() {
+        parent::inicializar();
+        $this->plantilla = 'inicial';
+    }
+    
     public function accionInicio(){
         $c = new CCriterio();
         $c->condicion('tipo_id', '1');
+        $c->limitar(12);
         $publicaciones = Publicacion::modelo()->listar($c);
         
         $this->mostrarVista('inicio', [

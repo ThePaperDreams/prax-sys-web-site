@@ -1,0 +1,21 @@
+#logo{
+    width: 160px;
+    right: 0px;
+    position: absolute;
+}
+.site-logo{
+    background-color: transparent;
+    box-shadow: none;
+}
+.site-logo h2{
+    padding: 0px;
+}
+.tp-caption{
+    text-shadow: 2px 2px 7px rgba(0,0,0,1) !important;
+}
+.tp-caption h1{
+    font-weight: 900;
+    font-size: 60px;
+    font-family: Raleway;
+    color: rgb(255, 255, 255);
+}

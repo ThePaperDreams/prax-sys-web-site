@@ -79,124 +79,25 @@
     
 </section><!--/#main-slider-->
 
-<section id="recent-works">
+<section id="recent-works" data-uk-parallax="{bg: '-1000'}" style="background-image: url(<?= Sis::UrlRecursos() ?>pics/Soccer-Wallpaper-HD.jpg); background-size: 100%;">
     <div class="container">
         <div id="cont-tit-not" class="center wow fadeInDown">
             <h2>Noticias</h2>          
         </div>
-<!--                                <div class="uk-width-medium-1-4 uk-row-first">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-init-inview uk-scrollspy-inview uk-invisible">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-invisible">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-invisible">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4 uk-grid-margin uk-row-first">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4 uk-grid-margin">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4 uk-grid-margin">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4 uk-grid-margin">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>-->
-        
-<!--        <div class="row">
-            <div class="col-sm-12">
-            </div>
-        </div>-->
-<div class="uk-grid" data-uk-grid-margin="" data-uk-scrollspy="{cls:'uk-animation-fade uk-invisible', target:'> div > .uk-panel', delay:300, repeat: true}">
-                                <div class="uk-width-medium-1-4 uk-row-first">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-init-inview uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4 uk-grid-margin uk-row-first">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4 uk-grid-margin">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4 uk-grid-margin">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                                <div class="uk-width-medium-1-4 uk-grid-margin">
-                                    <div class="uk-panel uk-panel-box uk-scrollspy-inview uk-animation-fade">
-                                        <h3 class="uk-panel-title">Item</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                    </div>
-                                </div>
-                            </div>
-        <div class="uk-grid" data-uk-grid-margin="" data-uk-scrollspy="{cls:'uk-animation-fade', target:'> div > .uk-panel', delay:300, repeat: true}">
+        <div class="uk-grid" data-uk-grid-margin="">
+        <?php $delay = 300 ?>
         <?php foreach($publicaciones AS $p):  ?>
-            <div class="uk-width-medium-1-4">
-                <div class="uk-panel uk-panel-box">
-                    <h3 class="uk-panel-title">Item</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="col-sm-4">
+                <div class="uk-panel uk-panel-box wow fadeInDown animated" data-wow-duration="1000ms" data-wow-offset="1" data-wow-delay="<?= $delay += 300 ?>ms">
+                    <h3 class="uk-panel-title"><?= $p->titulo ?></h3>
+                    <p><?= $p->resumen ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
         </div>            
+        <div class="col-sm-offset-4 col-sm-4">
+            <a class="btn btn-primary btn-block animation animated-item-3" href="#">Ver todas</a>
+        </div>
     </div><!--/.container-->
 </section><!--/#recent-works-->
 
@@ -257,6 +158,8 @@
         $(function(){
             var headerh = $("#header").height();
             var wh = parseInt($(window).height());
-            $("#main-slider .carousel .item").css("max-height", wh + "px");
+            $("#main-slider .carousel .item").css({
+                "max-height" : wh + "px",
+            });
         });
     </script>

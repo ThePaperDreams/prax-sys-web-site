@@ -18,6 +18,7 @@ Sis::Recursos()->recursoJs(['url' => Sis::apl()->tema->getUrlBase() . '/recursos
 Sis::Recursos()->UIKit();
 Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/core/scrollspy.min.js']);
 Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/components/sticky.min.js']);
+Sis::Recursos()->recursoJs(['url' => Sis::UrlRecursos() . '/librerias/uikit/js/components/parallax.min.js']);
 
 ?>
 <!--    <script src="js/jquery.prettyPhoto.js"></script>
