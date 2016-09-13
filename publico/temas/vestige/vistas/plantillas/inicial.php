@@ -20,26 +20,38 @@ $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
         <meta name="format-detection" content="telephone=no">
         <!-- CSS
           ================================================== -->
-        <link href="<?= $url ?>css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="<?= $url ?>css/bootstrap-theme.css" rel="stylesheet" type="text/css">
-        <link href="<?= $url ?>css/style.css" rel="stylesheet" type="text/css">
-        <link href="<?= $url ?>vendor/prettyphoto/css/prettyPhoto.css" rel="stylesheet" type="text/css">
-        <link href="<?= $url ?>vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
-        <link href="<?= $url ?>vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
+        <!--<link href="<?= $url ?>css/bootstrap.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="<?= $url ?>css/bootstrap-theme.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="<?= $url ?>css/style.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="<?= $url ?>vendor/prettyphoto/css/prettyPhoto.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="<?= $url ?>vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">-->
+        <!--<link href="<?= $url ?>vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">-->
         <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
-        <link href="<?= $url ?>css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
+        <!--<link href="<?= $url ?>css/custom.css" rel="stylesheet" type="text/css"> CUSTOM STYLESHEET FOR STYLING--> 
 
         <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
         <link rel="stylesheet" type="text/css" href="<?= $url ?>css/extralayers.css" media="screen" />	
         <link rel="stylesheet" type="text/css" href="<?= $url ?>vendor/revslider/css/settings.css" media="screen" />
 
         <!-- GOOGLE FONTS FOR REVOLUTION SLIDER ONLY -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css' />
+<!--        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800' rel='stylesheet' type='text/css' />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css' />
-        <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,700,800,900' rel='stylesheet' type='text/css' />-->
         <!-- Color Style -->
-        <link class="alt" href="<?= $url ?>colors/color1.css" rel="stylesheet" type="text/css">
-        <link href="<?= $url ?>style-switcher/css/style-switcher.css" rel="stylesheet" type="text/css">
+        
+        <link href="<?= $url ?>css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="<?= $url ?>css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+        <link href="<?= $url ?>css/style.css" rel="stylesheet" type="text/css">
+        <link href="<?= $url ?>vendor/prettyphoto/css/prettyPhoto.css" rel="stylesheet" type="text/css">
+        <link href="<?= $url ?>vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
+        <link href="<?= $url ?>vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
+         <!--Nivo Slider Styles--> 
+        <link rel="stylesheet" href="<?= $url ?>vendor/nivoslider/themes/default/default.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?= $url ?>vendor/nivoslider/nivo-slider.css" type="text/css" media="screen" />
+        <!-- [if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif] -->
+        <link href="<?= $url ?>css/custom.css" rel="stylesheet" type="text/css"> <!-- CUSTOM STYLESHEET FOR STYLING -->
+        <!-- Color Style -->
+        
         <link href="<?= $url ?>css/estilos.css" rel="stylesheet" type="text/css">
         <!-- SCRIPTS
           ================================================== -->
@@ -91,120 +103,15 @@ $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
                 <!-- End Site Header -->
             </div>
             <div class="hero-area">
-                <!-- Start Hero Slider -->
-                <div class="slider-rev-cont">
-                    <div class="tp-banner-container">
-                        <div class="tp-banner">
-                            <ul style="display:none;">
-                                <!-- SLIDE  -->
-                                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000"  data-saveperformance="off"  data-title="Slide 1">
-                                    <!-- MAIN IMAGE -->
-                                    <img src="<?= $url ?>images/slides/slide4.jpg"  alt="fullslide1"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-                                    <!-- LAYERS -->
-
-                                    <div class="caption-wrap">
-                                        <!-- LAYER NR. 1 -->
-                                        <div class="tp-caption light_heavy_60 sfb rtt tp-resizeme"
-                                             data-x="left" data-hoffset="20"
-                                             data-y="center" data-voffset="0"
-                                             data-speed="600"
-                                             data-start="800"
-                                             data-easing="Power4.easeOut"
-                                             data-splitin="none"
-                                             data-splitout="none"
-                                             data-elementdelay="0.01"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="500"
-                                             data-endeasing="Power4.easeIn"
-                                             style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">
-                                            <h1>
-                                                Club Deportivo Praxis
-                                            </h1>
-                                        </div>
-
-                                        <!-- LAYER NR. 2 -->
-                                        <div class="tp-caption light_medium_30_shadowed sfb rtt tp-resizeme"
-                                             data-x="left" data-hoffset="20"
-                                             data-y="center" data-voffset="70"
-                                             data-speed="600"
-                                             data-start="900"
-                                             data-easing="Power4.easeOut"
-                                             data-splitin="none"
-                                             data-splitout="none"
-                                             data-elementdelay="0.01"
-                                             data-endelementdelay="0.1"
-                                             data-endspeed="500"
-                                             data-endeasing="Power4.easeIn"
-                                             style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">Explore the astonishing world of the fishes.
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- SLIDE  -->
-                                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000"  data-saveperformance="off"  data-title="Slide 2">
-                                    <!-- MAIN IMAGE -->
-                                    <img src="<?= $url ?>images/slides/slide3.jpg"  alt="fullslide1"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-                                    <!-- LAYERS -->
-
-                                    <!-- LAYER NR. 1 -->
-                                    <div class="tp-caption light_medium_20_shadowed sfb rtt tp-resizeme"
-                                         data-x="left" data-hoffset="20"
-                                         data-y="bottom" data-voffset="-80"
-                                         data-speed="600"
-                                         data-start="800"
-                                         data-easing="Power4.easeOut"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-elementdelay="0.01"
-                                         data-endelementdelay="0.1"
-                                         data-endspeed="500"
-                                         data-endeasing="Power4.easeIn"
-                                         style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">ERBALUNGA
-                                    </div>
-
-                                    <!-- LAYER NR. 2 -->
-                                    <div class="tp-caption small_light_white sfb rtt tp-resizeme"
-                                         data-x="left" data-hoffset="20"
-                                         data-y="bottom" data-voffset="-50"
-                                         data-speed="600"
-                                         data-start="900"
-                                         data-easing="Power4.easeOut"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-elementdelay="0.01"
-                                         data-endelementdelay="0.1"
-                                         data-endspeed="500"
-                                         data-endeasing="Power4.easeIn"
-                                         style="z-index: 3; max-width: auto; max-height: auto; white-space: nowrap;">old village in Corsica, artwork in painting style
-                                    </div>
-                                </li>
-                                <!-- SLIDE  -->
-                                <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb=""  data-saveperformance="off"  data-title="Slide 3">
-                                    <!-- MAIN IMAGE -->
-                                    <img src="<?= $url ?>images/slides/slide5.jpg"  alt="fullslide2"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-                                    <!-- LAYERS -->
-
-                                    <!-- LAYER NR. 1 -->
-                                    <div class="tp-caption light_medium_20_shadowed sfb rtt tp-resizeme"
-                                         data-x="left" data-hoffset="20"
-                                         data-y="bottom" data-voffset="-40"
-                                         data-speed="600"
-                                         data-start="800"
-                                         data-easing="Power4.easeOut"
-                                         data-splitin="none"
-                                         data-splitout="none"
-                                         data-elementdelay="0.01"
-                                         data-endelementdelay="0.1"
-                                         data-endspeed="500"
-                                         data-endeasing="Power4.easeIn"
-                                         style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;">Vintage Hand Drawn View<br>of Lions Bridge in Budapest
-                                    </div>
-                                </li>
-                            </ul>	
-                            <div class="tp-bannertimer" style="display:none;"></div>	
-                        </div>
+    <!-- Start Hero Slider -->
+                <div class="slider-wrapper theme-default">
+                    <div class="nivoSlider clearfix" data-autoplay="yes" data-pagination="yes" data-arrows="yes" data-effect="random" data-thumbs="no" data-slices="15" data-animSpeed="500" data-pauseTime="3000" data-pauseonhover="yes">
+                        <img src="<?= $url ?>images/slides/slide3.jpg" alt="">
+                        <img src="<?= $url ?>images/slides/slide4.jpg" alt="">
+                        <img src="<?= $url ?>images/slides/slide5.jpg" alt="">
                     </div>
                 </div>
-                <!-- End Hero Slider -->
+    <!-- End Hero Slider -->
             </div>
             <!-- Notive Bar -->
             
@@ -302,75 +209,31 @@ $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
             <!-- End site footer -->
             <a id="back-to-top"><i class="fa fa-chevron-up"></i></a>  
         </div>
+        <!--<script src="<?= $url ?>js/jquery-2.1.3.min.js"></script>  Jquery Library Call -->
+        <!--<script src="<?= $url ?>vendor/prettyphoto/js/prettyphoto.js"></script>  PrettyPhoto Plugin -->
+        <!--<script src="<?= $url ?>js/ui-plugins.js"></script>  UI Plugins--> 
+        <!--<script src="<?= $url ?>js/helper-plugins.js"></script>  Helper Plugins -->
+        <!--<script src="<?= $url ?>vendor/owl-carousel/js/owl.carousel.min.js"></script>  Owl Carousel -->
+        <!--<script src="<?= $url ?>js/bootstrap.js"></script>  UI -->
+        <!--<script src="<?= $url ?>js/init.js"></script>  All Scripts -->
+        <!--<script src="<?= $url ?>vendor/flexslider/js/jquery.flexslider.js"></script>  FlexSlider -->
+<!--        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+
+        <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+        <!--<script type="text/javascript" src="<?= $url ?>vendor/revslider/js/jquery.themepunch.tools.min.js"></script>-->   
+        <!--<script type="text/javascript" src="<?= $url ?>vendor/revslider/js/jquery.themepunch.revolution.min.js"></script>-->
+        <script type="text/javascript">
+            
+        </script>
         <script src="<?= $url ?>js/jquery-2.1.3.min.js"></script> <!-- Jquery Library Call -->
         <script src="<?= $url ?>vendor/prettyphoto/js/prettyphoto.js"></script> <!-- PrettyPhoto Plugin -->
         <script src="<?= $url ?>js/ui-plugins.js"></script> <!-- UI Plugins -->
         <script src="<?= $url ?>js/helper-plugins.js"></script> <!-- Helper Plugins -->
         <script src="<?= $url ?>vendor/owl-carousel/js/owl.carousel.min.js"></script> <!-- Owl Carousel -->
+        <script src="<?= $url ?>vendor/nivoslider/jquery.nivo.slider.js"></script> <!-- NivoSlider -->
         <script src="<?= $url ?>js/bootstrap.js"></script> <!-- UI -->
         <script src="<?= $url ?>js/init.js"></script> <!-- All Scripts -->
         <script src="<?= $url ?>vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
-        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-        <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-        <script type="text/javascript" src="<?= $url ?>vendor/revslider/js/jquery.themepunch.tools.min.js"></script>   
-        <script type="text/javascript" src="<?= $url ?>vendor/revslider/js/jquery.themepunch.revolution.min.js"></script>
-        <script type="text/javascript">
-            jQuery(document).ready(function () {
-                jQuery('.tp-banner').show().revolution(
-                        {
-                            dottedOverlay: "none",
-                            delay: 9000,
-                            startwidth: 1060,
-                            startheight: 500,
-                            hideThumbs: 200,
-                            thumbWidth: 100,
-                            thumbHeight: 50,
-                            thumbAmount: 5,
-                            navigationType: "none",
-                            navigationArrows: "solo",
-                            navigationStyle: "preview2",
-                            touchenabled: "on",
-                            onHoverStop: "on",
-                            swipe_velocity: 0.7,
-                            swipe_min_touches: 1,
-                            swipe_max_touches: 1,
-                            drag_block_vertical: false,
-                            keyboardNavigation: "on",
-                            navigationHAlign: "center",
-                            navigationVAlign: "bottom",
-                            navigationHOffset: 0,
-                            navigationVOffset: 20,
-                            soloArrowLeftHalign: "left",
-                            soloArrowLeftValign: "center",
-                            soloArrowLeftHOffset: 20,
-                            soloArrowLeftVOffset: 0,
-                            soloArrowRightHalign: "right",
-                            soloArrowRightValign: "center",
-                            soloArrowRightHOffset: 20,
-                            soloArrowRightVOffset: 0,
-                            shadow: 0,
-                            fullWidth: "on",
-                            fullScreen: "off",
-                            spinner: "spinner0",
-                            stopLoop: "off",
-                            stopAfterLoops: -1,
-                            stopAtSlide: -1,
-                            shuffle: "off",
-                            autoHeight: "off",
-                      forceFullWidth: "off",
-                            hideThumbsOnMobile: "off",
-                            hideNavDelayOnMobile: 1500,
-                            hideBulletsOnMobile: "off",
-                            hideArrowsOnMobile: "off",
-                            hideThumbsUnderResolution: 0,
-                            hideSliderAtLimit: 0,
-                            hideCaptionAtLimit: 0,
-                            hideAllCaptionAtLilmit: 0,
-                            startWithSlide: 0
-                        });
-            });	//ready
-        </script>
         <script src="<?= $url ?>style-switcher/js/jquery_cookie.js"></script>
         <script src="<?= $url ?>style-switcher/js/script.js"></script>
     </body>
