@@ -22,3 +22,51 @@
 .skewed-title-bar{
     background-color: #DABC74;
 }
+h1.site-title{
+    color: white;
+    position: absolute;
+    left: 0px;
+    font-size: 20px;
+    width: 260px;
+    line-height: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero-area .page-header{
+    background-image: url(../images/slides/slide3.jpg);
+    background-size: 100%;
+    background-position: 0% 10%;
+    
+}
+.post-thumb {
+    max-width: 100%;
+}
+
+.login-panel{
+    /*padding: 100px;*/
+}
+
+.panel {
+    
+}
+.panel.panel-primary{
+    border: 1px solid #DABC74;
+}
+
+.panel.panel-primary .panel-heading{
+    background-color: #DABC74;
+    border-bottom: 1px solid #DABC74;
+}
+
+.btn.btn-primary{
+    background-color: #454545;
+}
+.btn.btn-success{
+    background-color: #DABC74;
+}
+.btn.btn-success:hover{
+    background-color: #9e874e;
+}
+.btn.btn-primary:hover{
+    background-color: #151414;
+}

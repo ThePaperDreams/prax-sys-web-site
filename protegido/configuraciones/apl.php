@@ -1,6 +1,6 @@
 
 <?php
- 
+define('URL_APP', "http://localhost/proyecto-formacion/prax-sys/");
 return [
     'version' => '1.0.0',
     'nombre' => 'Club Deportivo Praxis',
