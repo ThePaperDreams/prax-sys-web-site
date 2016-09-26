@@ -1,6 +1,8 @@
 
 <?php
 define('URL_APP', "http://localhost/proyecto-formacion/prax-sys/");
+define('RUTA_APP', "C:\wamp\www\proyecto-formacion\prax-sys");
+
 return [
     'version' => '1.0.0',
     'nombre' => 'Club Deportivo Praxis',
@@ -40,6 +42,11 @@ return [
             'clase' => 'ComUsuario',
             'usr' => 'admin',
             'clv' => 'admin',
+        ],
+        'JMail' => [
+            'ruta' => '!aplicacion.componentes',
+            'clase' => 'JMail',
+            'emailAdmin' => 'info@jakolab.com',
         ]
     ],
     

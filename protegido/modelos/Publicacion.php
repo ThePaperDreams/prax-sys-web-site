@@ -17,12 +17,13 @@
  * @property int $usuario_id
  * 
  * Relaciones del modelo
- * @property FkTblPublicacionesTblEstadosPublicacion1 $fkTblPublicacionesTblEstadosPublicacion1
+ * @property Comentarios[] $Comentarios
  * @property FkTblPublicacionesTblTiposPublicacion1 $fkTblPublicacionesTblTiposPublicacion1
  * @property FkTblPublicacionesTblUsuarios1 $fkTblPublicacionesTblUsuarios1
  */
 class Publicacion extends CModelo {
-
+    private $totalComentarios = null;
+    private $comentarios = null;
     /**
      * Esta función retorna el nombre de la tabla representada por el modelo
      * @return string
@@ -49,6 +50,7 @@ class Publicacion extends CModelo {
             'estado_id',
             'usuario_id',
             'resumen',
+            'img_previsualizacion',
         ];
     }
 
@@ -63,6 +65,7 @@ class Publicacion extends CModelo {
             'fkTblPublicacionesTblEstadosPublicacion1' => [self::PERTENECE_A, 'FkTblPublicacionesTblEstadosPublicacion1', 'estado_id'],
             'fkTblPublicacionesTblTiposPublicacion1' => [self::PERTENECE_A, 'FkTblPublicacionesTblTiposPublicacion1', 'tipo_id'],
             'fkTblPublicacionesTblUsuarios1' => [self::PERTENECE_A, 'FkTblPublicacionesTblUsuarios1', 'usuario_id'],
+            // 'Comentarios' => [self::CONTENGAN_A, 'Comentario', 'publicacion_id'],
         ];
     }
 
@@ -84,6 +87,25 @@ class Publicacion extends CModelo {
             'estado_id' => 'Estado Id',
             'usuario_id' => 'Usuario Id',
         ];
+    }
+
+    public function getTotalComentarios(){
+        if($this->totalComentarios === null){
+            $c = new CCriterio();
+            $c->condicion("publicacion_id", $this->id_publicacion)
+                ->y("estado", "1");
+            $this->totalComentarios = Comentario::modelo()->contar($c);
+        }
+        return $this->totalComentarios;
+    }
+
+    public function getComentarios(){
+        if($this->comentarios == null){            
+            $this->comentarios = Comentario::modelo()->listar([
+                'where' => "padre_id IS NULL AND publicacion_id = '$this->id_publicacion' AND estado = 1",
+            ]);
+        }
+        return $this->comentarios;
     }
 
     /**

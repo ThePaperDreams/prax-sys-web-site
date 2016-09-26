@@ -25,8 +25,8 @@ $this->migas = [
                         <?= CBoot::boton('Iniciar sesión', 'success', ['class' => 'btn-block']) ?>
                     </div>
                     <div class="form-group">
-                        <a href="<?= Sis::CrearUrl(['principal/registro']) ?>">
-                        <?= CBoot::boton('Registrarse', 'primary', ['class' => 'btn-block']) ?>                            
+                        <a href="<?= Sis::CrearUrl(['principal/registro']) ?>" class="btn btn-primary btn-block">
+                            Registrarse
                         </a>
                     </div>
                     <div class="form-group text-center">

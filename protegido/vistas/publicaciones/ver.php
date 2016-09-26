@@ -1,7 +1,7 @@
 <?php
 $this->migas = [
-    'Publicaciones' => ['publicaciones/todas'],
-    $publicacion->titulo,
+'Publicaciones' => ['publicaciones/todas'],
+$publicacion->titulo,
 ];
 ?>
 <div class="col-md-8">
@@ -26,101 +26,77 @@ $this->migas = [
     </article>
 
     <section class="post-comments" id="comments">
-        <!--<h2><i class="fa fa-comment"></i> Comments (4)</h2>-->
+        <h2><i class="fa fa-comment"></i> Comentarios (<?= $publicacion->totalComentarios ?>)</h2>
         <ol class="comments">
-            <!--        <li>
-                        <div class="post-comment-block">
-                            <img src="images/user2.jpg" alt="avatar" class="img-thumbnail">
-                            <div class="post-comment-content">
-                                <a href="#" class="btn btn-default btn-xs pull-right">Reply</a>
-                                <h5>John Doe says</h5>
-                                <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
-                                <p>There have been human health concerns associated with the consumption of dolphin meat in Japan after tests showed that dolphin meat contained high levels of mercury.</p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="post-comment-block">
-                            <img src="images/user1.jpg" alt="avatar" class="img-thumbnail">
-                            <div class="post-comment-content">
-                                <a href="#" class="btn btn-default btn-xs pull-right">Reply</a>
-                                <h5>John Doe says</h5>
-                                <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
-                                <p>Nicely said :)</p>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>
-                                <div class="post-comment-block">
-                                    <img src="images/user2.jpg" alt="avatar" class="img-thumbnail">
-                                    <div class="post-comment-content">
-                                        <a href="#" class="btn btn-default btn-xs pull-right">Reply</a>
-                                        <h5>John Doe says</h5>
-                                        <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
-                                        <p>Étienne de Flacourt (1607-60), French governor of Madagascar, described eating unborn dolphin calves cut out of the womb of a caught dolphin cow in Histoire de la grande isle Madagascar (1661). He considered the meat more tender and delicate than veal and believed it to be among the best meats he had eaten.</p>
-                                    </div>
+            <?php foreach($publicacion->Comentarios AS $comentario): ?>
+            <li>
+                <div class="post-comment-block">
+                    <?php if($comentario->Autor->foto != ""): ?>
+                    <img src="<?= URL_APP . 'publico/imagenes/usuarios/thumbs/tmb_' . $comentario->Autor->foto ?>" alt="avatar" class="img-thumbnail">
+                    <?php else: ?>
+                    <img src="<?= $comentario->Autor->foto ?>" alt="avatar" class="img-thumbnail">
+                    <?php endif ?>
+
+                    <div class="post-comment-content">
+                        <a href="#" class="btn btn-default btn-xs pull-right">Responder</a>
+                        <h5><?= $comentario->Autor->nombreMasUsuario ?> dice: </h5>
+                        <span class="meta-data"><?= $comentario->fecha ?></span>
+                        <p><?= $comentario->comentario ?></p>
+                    </div>
+                </div>
+                <?php if(count($comentario->respuestas) > 0): ?>
+                    <ul>
+                        <?php foreach($comentario->respuestas AS $respuesta):  ?>
+                        <li>
+                            <div class="post-comment-block">
+                                <?php if($respuesta->Autor->foto != ""): ?>
+                                <img src="<?= URL_APP . 'publico/imagenes/usuarios/thumbs/tmb_' . $respuesta->Autor->foto ?>" alt="avatar" class="img-thumbnail">
+                                <?php else: ?>
+                                <img src="<?= $comentario->Autor->foto ?>" alt="avatar" class="img-thumbnail">
+                                <?php endif ?>
+                                <div class="post-comment-content">
+                                    <a href="#" class="btn btn-default btn-xs pull-right">Responder</a>
+                                    <h5><?= $respuesta->Autor->nombreMasUsuario ?> respondió: </h5>
+                                    <span class="meta-data"><?= $respuesta->fecha ?></span>
+                                    <p><?= $respuesta->comentario ?></p>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="post-comment-block">
-                                    <img src="images/user2.jpg" alt="avatar" class="img-thumbnail">
-                                    <div class="post-comment-content">
-                                        <a href="#" class="btn btn-default btn-xs pull-right">Reply</a>
-                                        <h5>John Doe says</h5>
-                                        <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
-                                        <p>Real post, i love reading it all through</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="post-comment-block">
-                            <img src="images/user1.jpg" alt="avatar" class="img-thumbnail">
-                            <div class="post-comment-content">
-                                <a href="#" class="btn btn-default btn-xs pull-right">Reply</a>
-                                <h5>John Doe says</h5>
-                                <span class="meta-data">Nov 23, 2013 at 7:58 pm</span>
-                                <p>Dolphin meat is consumed in a small number of countries world-wide, which include Japan[125] and Peru (where it is referred to as chancho marino, or "sea pork").[126] While Japan may be the best-known and most controversial example, only a very small minority of the population has ever sampled it.</p>
                             </div>
-                        </div>
-                    </li>-->
+                        </li>
+                        <?php endforeach ?>
+                    </ul>
+                <?php endif ?>
+            </li>
+            <?php endforeach?>
         </ol>
     </section>
-
-<!--    <section class="post-comment-form">
-        <h3><i class="fa fa-share"></i> Post a comment</h3>
-        <form>
+    <section class="post-comment-form">
+        <h3><i class="fa fa-share"></i> Deja un comentario</h3>
+<?php if(Sis::apl()->usuario->esVisitante): ?>
+        <div class="row">
+            <div class="form-group">
+            <a class="btn btn-primary" href="<?= Sis::apl()->crearUrl(['principal/entrar']) ?>">Inicia sesión para dejar un comentario</a>
+            </div>
+        </div>
+<?php else:  ?>
+        <form method="POST">
             <div class="row">
                 <div class="form-group">
-                    <div class="col-md-4 col-sm-4">
-                        <input type="text" class="form-control input-lg" placeholder="Your name">
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <input type="email" class="form-control input-lg" placeholder="Your email">
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-                        <input type="url" class="form-control input-lg" placeholder="Website (optional)">
+                    <div class="col-md-12">
+                        <textarea cols="8" rows="4" name="comentario" class="form-control input-lg" placeholder="Tu opinión..."></textarea>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group">
                     <div class="col-md-12">
-                        <textarea cols="8" rows="4" class="form-control input-lg" placeholder="Your comment"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary btn-lg">Submit your comment</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Envia tu comentario <i class="fa fa-send"></i></button>
                     </div>
                 </div>
             </div>
         </form>
+<?php endif ?>
     </section>
--->
+
 </div>
 <div class="col-md-4 sidebar right-sidebar">
 

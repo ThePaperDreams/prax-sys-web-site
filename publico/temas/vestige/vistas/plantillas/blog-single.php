@@ -1,5 +1,6 @@
 <?php
 $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
+Sis::Recursos()->AwesomeFont();
 ?>
 <!DOCTYPE HTML>
 <html class="no-js">
@@ -35,6 +36,7 @@ $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
         <!-- SCRIPTS
           ================================================== -->
         <script src="<?= $url ?>js/modernizr.js"></script><!-- Modernizr -->
+        <?php Sis::Recursos()->jQuery(); ?>
     </head>
     <body class="header-style1">
         <!--[if lt IE 7]>
@@ -77,7 +79,11 @@ $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
                                 <li><a href="<?= Sis::CrearUrl(['Publicaciones/todas']) ?>">Noticias</a></li>
                                 <li><a href="<?= Sis::CrearUrl(['Eventos/todos']) ?>">Eventos</a></li>
                                 <li><a href="<?= Sis::CrearUrl(['Torneos/todos']) ?>">Torneos</a></li>
-                                <li><a href="<?= Sis::CrearUrl(['principal/entrar']) ?>">Ingresar</a></li>
+                                <?php if(Sis::apl()->usuario->esVisitante):  ?>
+                                <li><a href="<?= Sis::CrearUrl(['principal/entrar']) ?>">Ingresar <i class="fa fa-sign-in"></i></a></li>
+                                <?php  else:  ?>                       
+                                <li><a href="<?= Sis::CrearUrl(['principal/salir']) ?>">Salir <i class="fa fa-sign-out"></i></a></li>
+                                <?php endif ?>
                             </ul>
                         </nav>
                     </div>
@@ -192,7 +198,6 @@ $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
             <!-- End site footer -->
             <a id="back-to-top"><i class="fa fa-chevron-up"></i></a>  
         </div>
-        <script src="<?= $url ?>js/jquery-2.1.3.min.js"></script> <!-- Jquery Library Call -->
         <script src="<?= $url ?>vendor/prettyphoto/js/prettyphoto.js"></script> <!-- PrettyPhoto Plugin -->
         <script src="<?= $url ?>js/ui-plugins.js"></script> <!-- UI Plugins -->
         <script src="<?= $url ?>js/helper-plugins.js"></script> <!-- Helper Plugins -->

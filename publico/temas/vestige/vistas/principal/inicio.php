@@ -11,7 +11,7 @@ $url = Sis::apl()->tema->getUrlBase() . '/recursos/';
                         <?php if ($publicacion->img_previsualizacion == null && $publicacion->img_previsualizacion == ""): ?>
                         <img src="<?= Sis::UrlBase() ?>publico/imagenes/publicaciones/default.png" alt="" class="post-thumb">
                         <?php else: ?>
-                        <img src="<?= Sis::UrlBase() ?>publico/imagenes/publicaciones/<?= $publicacion->img_previsualizacion ?>" alt="" class="post-thumb">
+                        <img src="<?= $publicacion->img_previsualizacion ?>" alt="" class="post-thumb">
                         <?php endif ?>
                         <span class="caption"></span>
                     </a>

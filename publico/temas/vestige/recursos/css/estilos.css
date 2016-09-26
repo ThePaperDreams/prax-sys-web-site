@@ -70,3 +70,11 @@ h1.site-title{
 .btn.btn-primary:hover{
     background-color: #151414;
 }
+
+.featured-block img{
+    max-height: 200px;
+    width: 100%;
+}
+.required{
+    color: red;
+}
