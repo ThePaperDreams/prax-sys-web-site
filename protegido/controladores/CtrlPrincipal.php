@@ -60,6 +60,69 @@ class CtrlPrincipal extends CControlador{
         $this->redireccionar('entrar');
     }
 
+    public function accionRecuperar(){
+        if(isset($this->_p['email'])){
+            $usuario = Usuario::modelo()->primer(['where' => "email='" . $this->_p['email'] . "'"]);
+            if($usuario !== null && $usuario->recuperacion == null){
+                if($this->enviarEmailRecuperacion($usuario)){
+                    $usuario->guardar();
+                    $this->redireccionar("entrar");
+                }
+            }
+        }
+
+        $this->plantilla = "login";
+        $this->mostrarVista("recuperar");
+    }
+
+    public function enviarEmailRecuperacion(&$usuario){
+        $relleno = base64_encode(time());
+        $distraccion = rand(0, 100);
+        $tokken = $this->encriptarIdUsuario($usuario->id_usuario, $distraccion);
+        $url = "$relleno#$tokken#" . base64_encode($distraccion);
+        $mensaje = $this->vistaP('_recuperar', ['url' => $url]);
+        $asunto = "Club Deportivo Praxis - Recuperación de contraseña";
+        $usuario->recuperacion = 1;
+        $usuario->url_recuperacion = $url;
+        return Sis::apl()->JMail->enviar($usuario->email, $asunto, $mensaje);
+    }
+
+    public function accionRestablecerClave(){
+        if(!isset($this->_g['t'])){ $this->redireccionar("entrar"); }
+        $id = $this->desencriptarIdUsuario($this->_g['t']);
+        $c = new CCriterio();
+        $c->condicion("id_usuario", $id)
+                ->y("url_recuperacion", $this->_g['t']);        
+        $usuario = Usuario::modelo()->primer($c);
+        if($usuario !== null && isset($this->_p['recuperar-pwd'])){
+            $this->cambiarClave($usuario);
+        }
+        if($usuario !== null){
+            $this->plantilla = "login";
+            $this->mostrarVista('restablecer', ['token' => $this->_g['t'], 'idusuario' => $id]);
+        } else {
+            $this->redireccionar("entrar");
+        }        
+    }
+
+    private function cambiarClave(&$usuario){
+        $usuario->clave = sha1($this->_p['recuperar-pwd']);
+        $usuario->url_recuperacion = null;
+        $usuario->recuperacion = null;
+        if($usuario->guardar()){
+            Sis::Sesion()->flash("alerta", [
+                'tipo' => 'success',
+                'msg' => 'Se ha cambiado exitosamente la contraseña',
+            ]);
+        } else {
+            Sis::Sesion()->flash("alerta", [
+                'tipo' => 'error',
+                'msg' => 'Ocurrió un error al cambiar la contraseña',
+            ]);
+        }
+        $this->redireccionar('entrar');
+    }
+
     private function enviarEmailConfirmacion($usuario){
         $tokken = $this->generarUrlRecuperacion($usuario);
         $url = Sis::CrearUrl(['principal/confirmar', 't' => $tokken]);

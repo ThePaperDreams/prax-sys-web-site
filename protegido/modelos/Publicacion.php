@@ -103,6 +103,7 @@ class Publicacion extends CModelo {
         if($this->comentarios == null){            
             $this->comentarios = Comentario::modelo()->listar([
                 'where' => "padre_id IS NULL AND publicacion_id = '$this->id_publicacion' AND estado = 1",
+                'order' => 'id_comentario DESC'
             ]);
         }
         return $this->comentarios;

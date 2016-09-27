@@ -38,7 +38,7 @@ $publicacion->titulo,
                     <?php endif ?>
 
                     <div class="post-comment-content">
-                        <a href="#" class="btn btn-default btn-xs pull-right">Responder</a>
+                        <a href="#" class="btn btn-default btn-xs pull-right responder-comentario" data-padre="<?= $comentario->id_comentario ?>">Responder</a>
                         <h5><?= $comentario->Autor->nombreMasUsuario ?> dice: </h5>
                         <span class="meta-data"><?= $comentario->fecha ?></span>
                         <p><?= $comentario->comentario ?></p>
@@ -55,7 +55,7 @@ $publicacion->titulo,
                                 <img src="<?= $comentario->Autor->foto ?>" alt="avatar" class="img-thumbnail">
                                 <?php endif ?>
                                 <div class="post-comment-content">
-                                    <a href="#" class="btn btn-default btn-xs pull-right">Responder</a>
+                                    <a href="#" class="btn btn-default btn-xs pull-right responder-comentario" data-padre="<?= $comentario->id_comentario ?>" >Responder</a>
                                     <h5><?= $respuesta->Autor->nombreMasUsuario ?> respondió: </h5>
                                     <span class="meta-data"><?= $respuesta->fecha ?></span>
                                     <p><?= $respuesta->comentario ?></p>
@@ -104,3 +104,58 @@ $publicacion->titulo,
     <?= $this->vistaP('_resumenEventos', ['ultimosPosts' => $ultimosPosts ]) ?>
 
 </div>
+<script>
+    $(function(){
+        $(".responder-comentario").click(function(){
+            openComment($(this));
+            return false;
+        });
+    });
+
+    function openComment(obj){
+        if($("#temp-text").length > 0){
+            $("#temp-text").remove();
+        }
+        var input = $("<textarea/>", {id:"temp-text", class: "form-control", placeholder:"Ingrese su respuesta, presione enter para enviarla"});
+        var padre = obj.attr("data-padre");
+        input.hide();
+        input.attr("data-padre", padre);
+        var container = obj.closest(".post-comment-content");
+        container.append(input);
+        /* animaciones */
+        input.slideDown(function(){
+            input.focus();
+        });
+        input.keydown(function(e){
+            if(e.which === 13){ sendComment(input); }
+        });
+    }
+
+    function sendComment(input){
+        var texto = input.val();
+        var padre = input.attr("data-padre");
+        if(texto === ""){ alert("El comentario no puede estar vacio"); }
+        input.attr("disabled", "disabled");
+
+        $.ajax({
+            type: 'POST',
+            url: '<?= Sis::crearUrl(['publicaciones/ajax']) ?>',
+            data: {
+                dataAjx:true,
+                texto: texto,
+                padre: padre,
+            },
+            success: function(obj){
+                if(obj.error === false){
+                    alert("Su comentario se envió satisfactoriamente, en tanto sea aprobado será publicado");
+                } else {
+                    alert("Ocurrió un error al guardar el comentario");
+                    console.log(obj);
+                }
+                input.slideUp(function(){
+                    input.remove();
+                });
+            }
+        });
+    }
+</script>

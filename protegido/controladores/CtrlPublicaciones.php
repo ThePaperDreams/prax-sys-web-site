@@ -31,6 +31,21 @@ class CtrlPublicaciones extends CControlador{
             $this->redireccionar('publicaciones/ver', ['id' => $id]);
         }
     }
+
+    public function accionAjax(){
+        if(!isset($this->_p['dataAjx'])){ Sis::fin(); }
+        $padre = Comentario::modelo()->porPk($this->_p['padre']);
+        $respuesta = new Comentario();
+        $respuesta->publicacion_id = $padre->publicacion_id;
+        $respuesta->padre_id = $padre->id_comentario;
+        $respuesta->estado = 2;
+        $respuesta->fecha = date("Y-m-d H:i:s");
+        $respuesta->usuario_id = Sis::apl()->usuario->getID();
+        $respuesta->comentario = $this->_p['texto'];
+        $this->json([
+            'error' => !$respuesta->guardar(),
+        ]);
+    }
     
     public function accionTodas(){
         $this->plantilla = "blog-single";
